@@ -3,6 +3,7 @@ import react from "@vitejs/plugin-react"
 import { defineConfig } from "vite"
 
 export default defineConfig({
+  base: "/the-self-development-journey/",
   plugins: [react()],
   resolve: {
     alias: {

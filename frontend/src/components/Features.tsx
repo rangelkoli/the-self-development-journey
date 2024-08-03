@@ -1,5 +1,3 @@
-import React from "react";
-
 const Features = () => {
   return (
     <div className='[background:radial-gradient(100%_100%_at_50%_10%,#3949AB_40%,#5C6BC0_100%)]'>

@@ -1,10 +1,7 @@
-import React from "react";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
-import LionImage from "../assets/LionImage.webp";
-const HeroSection = () => {
-  const [darkMode, setDarkMode] = React.useState(false);
 
+const HeroSection = () => {
   return (
     <div
       className={`h-screen [background:radial-gradient(100%_100%_at_50%_10%,#fff_40%,#3949AB_90%)] flex justify-center items-center`}
