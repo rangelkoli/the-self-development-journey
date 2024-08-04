@@ -6,7 +6,7 @@ const HeroSection = () => {
     <div
       className={`h-screen [background:radial-gradient(100%_100%_at_50%_10%,#fff_40%,#3949AB_90%)] flex justify-center items-center`}
     >
-      <section className='w-full py-12 md:py-24 lg:py-32 xl:py-48'>
+      <section className='w-full pt-12 md:py-24 lg:py-32 xl:py-48 sm:my-24'>
         <div className='container px-4 md:px-6'>
           <div className='grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]'>
             <div className='flex flex-col justify-center space-y-4'>
