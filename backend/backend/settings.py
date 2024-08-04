@@ -29,7 +29,10 @@ SECRET_KEY = "django-insecure-xlsg_1s$d^u^+0j#p6951c#+7+o!5o(h*@lvysc5*#vbjj2wmj
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'the-self-development-journey-avafdugdgjfgfrat.eastus-01.azurewebsites.net'
+    'the-self-development-journey-avafdugdgjfgfrat.eastus-01.azurewebsites.net',
+    '169.254.129.3',
+    'localhost',
+    '127.0.0.1'    
 ]
 
 
