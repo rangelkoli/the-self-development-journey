@@ -5,9 +5,14 @@ import { ThemeProvider } from "@material-tailwind/react";
 import axios from "axios";
 
 function App() {
-  axios.get(import.meta.env.BACKEND + "/api/home").then((response) => {
-    console.log(response?.data);
-  });
+  console.log(import.meta.env.BACKEND);
+  axios
+    .get(
+      "the-self-development-journey-avafdugdgjfgfrat.eastus-01.azurewebsites.net/api/home"
+    )
+    .then((response) => {
+      console.log(response?.data);
+    });
 
   return (
     <>
