@@ -21,5 +21,6 @@ def waitlist(request):
 
     return Response({'message': 'Email added to waitlist!'})
 
+@api_view(['GET'])
 def home(request):
     return Response({'message': 'Hello, world!'})
