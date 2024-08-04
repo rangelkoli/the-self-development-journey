@@ -32,7 +32,8 @@ ALLOWED_HOSTS = [
     'the-self-development-journey-avafdugdgjfgfrat.eastus-01.azurewebsites.net',
     '169.254.129.3',
     'localhost',
-    '127.0.0.1'    
+    '127.0.0.1',
+    'http://127.0.0.1:8000/'
 ]
 
 

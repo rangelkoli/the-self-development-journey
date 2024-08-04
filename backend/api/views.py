@@ -16,8 +16,7 @@ def hello_world(request):
 @api_view(['POST'])
 def waitlist(request):
     print(request.data)
-    jsonData = json.loads(request.data)
-    email = jsonData['email']
+    email = request.data['email']
     print(email)
     signup_waitlist = SignUpWaitlist(email=email)
     signup_waitlist.save()

@@ -5,7 +5,7 @@ const postWaitlist = async (email: string) => {
         headers: {
         "Content-Type": "application/json",
         },
-        body: JSON.stringify({ email: email }),
+        body: JSON.stringify({ email }),
     });
     }
     
