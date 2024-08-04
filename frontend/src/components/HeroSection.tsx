@@ -1,7 +1,13 @@
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
-
+import postWaitlist from "../utils/waitlist";
+import { useState } from "react";
 const HeroSection = () => {
+  const [email, setEmail] = useState("");
+  const onClickWaitlist = () => {
+    postWaitlist(email);
+  };
+
   return (
     <div
       className={`h-screen [background:radial-gradient(100%_100%_at_50%_10%,#fff_40%,#3949AB_90%)] flex justify-center items-center`}
@@ -29,8 +35,10 @@ const HeroSection = () => {
                     type='email'
                     placeholder='Enter your email'
                     className='max-w-lg flex-1'
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                   />
-                  <Button type='submit'>Get Started</Button>
+                  <Button onClick={onClickWaitlist}>Get Started</Button>
                 </form>
                 <p className='text-xs text-gray-700'>
                   Sign up to unlock exclusive features and start optimizing your
