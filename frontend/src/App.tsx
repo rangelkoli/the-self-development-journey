@@ -2,8 +2,13 @@ import "./App.css";
 import Navbar from "./components/Navbar";
 import HeroSection from "./components/HeroSection";
 import { ThemeProvider } from "@material-tailwind/react";
+import axios from "axios";
 
 function App() {
+  axios.get(import.meta.env.BACKEND + "/api/home").then((response) => {
+    console.log(response?.data);
+  });
+
   return (
     <>
       <div className=''>
