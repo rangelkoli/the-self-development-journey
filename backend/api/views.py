@@ -18,6 +18,8 @@ def waitlist(request):
     print(email)
     signup_waitlist = SignUpWaitlist(email=email)
     signup_waitlist.save()
-    
+
     return Response({'message': 'Email added to waitlist!'})
 
+def home(request):
+    return Response({'message': 'Hello, world!'})
