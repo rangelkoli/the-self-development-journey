@@ -28,7 +28,9 @@ SECRET_KEY = "django-insecure-xlsg_1s$d^u^+0j#p6951c#+7+o!5o(h*@lvysc5*#vbjj2wmj
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'the-self-development-journey-avafdugdgjfgfrat.eastus-01.azurewebsites.net'
+]
 
 
 # Application definition
