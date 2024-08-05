@@ -1,12 +1,21 @@
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import postWaitlist from "../utils/waitlist";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import getWaitlistedUsers from "../utils/waitlistUsercount";
 const HeroSection = () => {
   const [email, setEmail] = useState("");
   const onClickWaitlist = () => {
     postWaitlist(email);
   };
+
+  const [userCount, setuserCount] = useState(0);
+  useEffect(() => {
+    getWaitlistedUsers().then((res) => {
+      console.log(res.data["count"]);
+      setuserCount(res.data["count"]);
+    });
+  }, []);
 
   return (
     <div
@@ -40,9 +49,10 @@ const HeroSection = () => {
                   />
                   <Button onClick={onClickWaitlist}>Get Started</Button>
                 </div>
-                <p className='text-xs text-gray-700'>
-                  Sign up to unlock exclusive features and start optimizing your
-                  workflow today.{" "}
+                <p className='text-sm text-gray-700'>
+                  {userCount === 0
+                    ? "Loading..."
+                    : ` 🎉${userCount} people have already joined the waitlist.`}
                   {/* <Link
                     href='#'
                     className='underline underline-offset-2'

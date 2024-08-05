@@ -25,3 +25,11 @@ def waitlist(request):
 @api_view(['GET'])
 def home(request):
     return Response({'message': 'Hello, world!'})
+
+@api_view(['GET'])
+def waitlistedUsers(request):
+    waitlist = SignUpWaitlist.objects.all()
+    count = waitlist.count()
+    print("count:", count)
+    
+    return Response({'message': 'Waitlisted users', 'count': count})
