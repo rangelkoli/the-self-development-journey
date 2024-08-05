@@ -30,7 +30,7 @@ const HeroSection = () => {
                 </p>
               </div>
               <div className='w-full max-w-md space-y-2 justify-center items-center'>
-                <form className='flex gap-2 justify-center items-center'>
+                <div className='flex gap-2 justify-center items-center'>
                   <Input
                     type='email'
                     placeholder='Enter your email'
@@ -39,7 +39,7 @@ const HeroSection = () => {
                     onChange={(e) => setEmail(e.target.value)}
                   />
                   <Button onClick={onClickWaitlist}>Get Started</Button>
-                </form>
+                </div>
                 <p className='text-xs text-gray-700'>
                   Sign up to unlock exclusive features and start optimizing your
                   workflow today.{" "}

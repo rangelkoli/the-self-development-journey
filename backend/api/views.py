@@ -18,8 +18,8 @@ def waitlist(request):
     print("data:", request.data)
     email = request.data['email']
     print("email:",email)
-    # signup_waitlist = SignUpWaitlist(email=email)
-    # signup_waitlist.save()
+    signup_waitlist = SignUpWaitlist(email=email)
+    signup_waitlist.save()
     return Response({'message': 'Email added to waitlist!'})
 
 @api_view(['GET'])
