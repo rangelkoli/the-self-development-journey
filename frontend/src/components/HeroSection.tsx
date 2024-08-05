@@ -10,11 +10,28 @@ const HeroSection = () => {
   const [email, setEmail] = useState("");
   const { toast } = useToast();
   const onClickWaitlist = () => {
+    if (!email) {
+      toast({
+        description: "Please enter a valid email address.",
+        title: "Error",
+        variant: "destructive",
+      });
+      return;
+    }
+    if (!email.includes("@")) {
+      toast({
+        description: "Please enter a valid email address.",
+        title: "Error",
+        variant: "destructive",
+      });
+      return;
+    }
     postWaitlist(email);
     setEmail("");
     toast({
       description: "You have succesfully been waitlisted! 🎉",
       title: "Success",
+      variant: "default",
     });
   };
 
