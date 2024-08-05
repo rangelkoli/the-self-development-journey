@@ -15,11 +15,11 @@ def hello_world(request):
 
 @api_view(['POST'])
 def waitlist(request):
-    print(request.data)
+    print("data:", request.data)
     email = request.data['email']
-    print(email)
-    signup_waitlist = SignUpWaitlist(email=email)
-    signup_waitlist.save()
+    print("email:",email)
+    # signup_waitlist = SignUpWaitlist(email=email)
+    # signup_waitlist.save()
     return Response({'message': 'Email added to waitlist!'})
 
 @api_view(['GET'])
