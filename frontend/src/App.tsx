@@ -11,7 +11,7 @@ function App() {
           <Navbar />
           <HeroSection />
           <div>
-            <section className='w-full py-12 md:py-24 lg:py-32 bg-gradient-to-b from-[#3949AB] to-indigo-400'>
+            <section className='w-full py-12 md:py-24 lg:py-32 bg-gradient-to-b from-[#3949AB] to-indigo-400 dark:from-[#3949AB] dark:to-[#3949AB]'>
               <div className='container px-4 md:px-6'>
                 <div className='flex flex-col items-center justify-center space-y-4 text-center'>
                   <div className='space-y-2 text-white'>
@@ -72,7 +72,7 @@ function App() {
                 </div>
               </div>
             </section>
-            <section className='w-full py-12 md:py-24 lg:py-32 bg-gradient-to-b from-indigo-400 to-blue-300'>
+            <section className='w-full py-12 md:py-24 lg:py-32 bg-gradient-to-b from-indigo-400 to-blue-300 dark:from-[#3949AB] dark:to-indigo-700'>
               <div className='container px-4 md:px-6'>
                 <div className='flex flex-col items-center justify-center space-y-4 text-center'>
                   <div className='space-y-2'>
@@ -133,7 +133,7 @@ function App() {
                 </div>
               </div>
             </section>
-            <section className='w-full py-12 md:py-24 lg:py-32 bg-gradient-to-b from-blue-300 to-sky-50'>
+            <section className='w-full py-12 md:py-24 lg:py-32 bg-gradient-to-b from-blue-300 to-sky-50 dark:from-indigo-700 dark:to-black'>
               <div className='container px-4 md:px-6'>
                 <div className='flex flex-col items-center justify-center space-y-4 text-center'>
                   <div className='space-y-2'>
