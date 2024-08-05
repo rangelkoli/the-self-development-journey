@@ -1,13 +1,13 @@
 import "./App.css";
 import Navbar from "./components/Navbar";
 import HeroSection from "./components/HeroSection";
-import { ThemeProvider } from "@material-tailwind/react";
+import { ThemeProvider } from "./components/themeProvider";
 
 function App() {
   return (
     <>
       <div className=''>
-        <ThemeProvider value={{}}>
+        <ThemeProvider defaultTheme='dark' storageKey='vite-ui-theme'>
           <Navbar />
           <HeroSection />
           <div>

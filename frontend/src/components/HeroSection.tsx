@@ -3,6 +3,7 @@ import { Input } from "./ui/input";
 import postWaitlist from "../utils/waitlist";
 import { useEffect, useState } from "react";
 import getWaitlistedUsers from "../utils/waitlistUsercount";
+import { useTheme } from "./themeProvider";
 const HeroSection = () => {
   const [email, setEmail] = useState("");
   const onClickWaitlist = () => {
@@ -17,9 +18,16 @@ const HeroSection = () => {
     });
   }, []);
 
+  const { theme } = useTheme();
   return (
     <div
-      className={`h-screen [background:radial-gradient(100%_100%_at_50%_10%,#fff_40%,#3949AB_90%)] flex justify-center items-center`}
+      className={`h-screen flex justify-center items-center`}
+      style={{
+        background:
+          theme === "dark"
+            ? "radial-gradient(100% 100% at 50% 10%, #000 40%, #3949AB 90%)"
+            : "radial-gradient(100% 100% at 50% 10%, #fff 40%, #3949AB 90%)",
+      }}
     >
       <section className='w-full pt-12 md:py-24 lg:py-32 xl:py-48 sm:my-24'>
         <div className='container px-4 md:px-6'>
@@ -32,7 +40,7 @@ const HeroSection = () => {
                     Self-Development Platform
                   </span>
                 </h1>
-                <p className='max-w-[600px] text-gray-700 md:text-xl text-justify'>
+                <p className='max-w-[600px] text-gray-700 dark:text-gray-200 md:text-xl text-justify'>
                   Discover a world of self-development resources, including
                   daily reading materials, a calendar to track your tasks, and a
                   journaling page with the ability to add daily selfies.
@@ -49,7 +57,7 @@ const HeroSection = () => {
                   />
                   <Button onClick={onClickWaitlist}>Get Started</Button>
                 </div>
-                <p className='text-sm text-gray-700'>
+                <p className='text-sm text-gray-700 dark:text-gray-200'>
                   {userCount === 0
                     ? "Loading..."
                     : ` 🎉${userCount} people have already joined the waitlist.`}

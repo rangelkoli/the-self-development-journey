@@ -9,6 +9,7 @@ import {
 } from "./ui/navigation-menu";
 import { Button } from "./ui/button";
 import { cn } from "../lib/utils";
+import { ModeToggle } from "./modeToggle";
 
 const components = [
   {
@@ -133,7 +134,8 @@ const Navbar = () => {
           </NavigationMenuList>
         </NavigationMenu>
 
-        <Button variant='secondary'>Login/Signup</Button>
+        {/* <Button variant='secondary'>Login/Signup</Button> */}
+        <ModeToggle />
       </div>
 
       {/* Mobile Navbar */}
