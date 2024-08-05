@@ -60,7 +60,7 @@ const Navbar = () => {
     <div className='sticky w-screen p-4 bg-white dark:bg-black'>
       {/* Desktop Navbar */}
       <div className='hidden lg:flex flex-wrap items-center justify-between'>
-        <div className='flex items-center'>
+        <div className='flex items-center md:pl-10 p-0'>
           <h1 className='text-black dark:text-white text-2xl font-bold'>
             t<span className='text-blue-500'>SDJ</span>
           </h1>

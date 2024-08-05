@@ -4,10 +4,18 @@ import postWaitlist from "../utils/waitlist";
 import { useEffect, useState } from "react";
 import getWaitlistedUsers from "../utils/waitlistUsercount";
 import { useTheme } from "./themeProvider";
+import { useToast } from "./ui/use-toast";
+
 const HeroSection = () => {
   const [email, setEmail] = useState("");
+  const { toast } = useToast();
   const onClickWaitlist = () => {
     postWaitlist(email);
+    setEmail("");
+    toast({
+      description: "You have succesfully been waitlisted! 🎉",
+      title: "Success",
+    });
   };
 
   const [userCount, setuserCount] = useState(0);
