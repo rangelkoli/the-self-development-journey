@@ -69,7 +69,9 @@ class Login(APIView):
 
             }
             jwt_token = jwt.encode(payload, 'SECRET_KEY', algorithm='HS256')
-            return Response({'jwt_token': jwt_token})
+            response = Response()
+            response.set_cookie(key='jwt', value=jwt_token, httponly=True, secure=True, expires=datetime.datetime.now() + datetime.timedelta(days=15), samesite='None', path='/')
+            return response
         return Response({'message': 'Invalid credentials'}, status=status.HTTP_401_UNAUTHORIZED)
     
     def get(self, request):

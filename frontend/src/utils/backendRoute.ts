@@ -1,1 +1,1 @@
-export const BACKENDROUTE = "https://the-self-development-journey-avafdugdgjfgfrat.eastus-01.azurewebsites.net/"
+export const BACKENDROUTE = "https://the-self-development-journey-avafdugdgjfgfrat.eastus-01.azurewebsites.net"

@@ -14,15 +14,20 @@ import { Register } from "../utils/auth";
 export function Signup() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [name, setName] = useState("");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const response = await Register(email, password);
+    const response = await Register(email, password, name);
     if (response.ok) {
       alert("Account created successfully");
     } else {
       alert("An error occurred");
     }
+  };
+
+  const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setName(e.target.value);
   };
   return (
     <div className='min-h-[95vh] flex items-center justify-center bg-gray-100 dark:bg-black'>
@@ -36,12 +41,18 @@ export function Signup() {
         </CardHeader>
         <CardContent>
           <div className='grid gap-4'>
-            {/* <div className='grid grid-cols-2 gap-4'>
+            <div className='grid  gap-4'>
               <div className='grid gap-2'>
-                <Label htmlFor='first-name'>First name</Label>
-                <Input id='first-name' placeholder='Max' required />
+                <Label htmlFor='first-name'>Name</Label>
+                <Input
+                  id='first-name'
+                  placeholder='Max'
+                  required
+                  value={name}
+                  onChange={handleNameChange}
+                />
               </div>
-              <div className='grid gap-2'>
+              {/* <div className='grid gap-2'>
                 <Label htmlFor='last-name'>Last name</Label>
                 <Input
                   id='last-name'
@@ -50,8 +61,8 @@ export function Signup() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                 />
-              </div>
-            </div> */}
+              </div> */}
+            </div>
             <div className='grid gap-2'>
               <Label htmlFor='email'>Email</Label>
               <Input
