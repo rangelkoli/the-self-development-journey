@@ -4,11 +4,12 @@ import HeroSection from "./components/HeroSection";
 import { ThemeProvider } from "./components/themeProvider";
 import booksLanding from "./assets/booksLanding.png";
 import calndarLanding from "./assets/calendarLanding.png";
+import { LoginForm } from "./pages/Login";
 
 function App() {
   return (
     <>
-      <div className=''>
+      <div className='overflow-x-hidden'>
         <ThemeProvider defaultTheme='dark' storageKey='vite-ui-theme'>
           <Navbar />
           <HeroSection />

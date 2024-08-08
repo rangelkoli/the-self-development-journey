@@ -42,7 +42,6 @@ ALLOWED_HOSTS = [
 INSTALLED_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",
-
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
@@ -50,6 +49,7 @@ INSTALLED_APPS = [
     'corsheaders',
     "api",
     "rest_framework",
+
 
 ]
 CORS_ORIGIN_ALLOW_ALL = True
@@ -142,3 +142,8 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+AUTH_USER_MODEL = "api.User"
+
+CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOW_CREDENTIALS = True
