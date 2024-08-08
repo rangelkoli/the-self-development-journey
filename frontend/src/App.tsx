@@ -36,6 +36,7 @@ function App() {
   useEffect(() => {
     const checkAuth = async () => {
       const response = await GetCurrentUser();
+      console.log(response);
       if (response.ok) {
         setIsAuthenticated(true);
         response.json().then((data) => {
@@ -45,6 +46,7 @@ function App() {
         setIsAuthenticated(false);
       }
     };
+
     checkAuth();
   }, []);
 
