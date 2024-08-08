@@ -29,11 +29,18 @@ function App() {
 
   const [isAuthenticated, setIsAuthenticated] = useState(true);
 
+  const [user, setUser] = useState({
+    email: "",
+    name: "",
+  });
   useEffect(() => {
     const checkAuth = async () => {
       const response = await GetCurrentUser();
       if (response.ok) {
         setIsAuthenticated(true);
+        response.json().then((data) => {
+          setUser(data);
+        });
       } else {
         setIsAuthenticated(false);
       }
@@ -46,6 +53,7 @@ function App() {
       <div className='overflow-x-hidden'>
         <ThemeProvider defaultTheme='dark' storageKey='vite-ui-theme'>
           <Navbar />
+          <p>{user.email}</p>
           <p>{isAuthenticated}</p>
           {isAuthenticated ? (
             <RouterProvider router={routerUnauthenticated} />
